@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>Simple Calculator</h1>
+    <form action="/calculate" method="post">
+        <input type="text" name="expression" placeholder="Enter expression" required>
+        <button type="submit">Calculate</button>
+    </form>
+    <a href="/history">Full History</a>
+    {% if provided_expression %}
+    <div>
+        <h2>Provided expression:</h2>
+        <p>{{ provided_expression }}</p>
+    </div>
+    {% endif %}
+    {% if result %}
+    <div>
+        <h2>Result:</h2>
+        <p>{{ result }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
